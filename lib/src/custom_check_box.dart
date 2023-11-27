@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 
 class CustomCheckBox extends StatefulWidget {
-  List<String>? checkboxList;
+  final List<String>? checkboxList;
   final Color borderColor;
   final Color checkIconColor;
   final Color selectedBoxColor;
@@ -246,6 +246,7 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
           if (list[index]["bool"] == true) selectedList.add(selected);
           if (list[index]["bool"] == false) selectedList.remove(selected);
           //if multiple selection is true list of string will be setup as a value
+          widget.onChanged(selectedList);
         }
       });
     } else {
