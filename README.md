@@ -42,7 +42,7 @@ class CheckBoxDemo extends StatelessWidget {
               checkBoxHeight: 20,
               borderColor: Colors.orange,
               onChanged: (value) {
-                debugPrint(value);
+                print(value);
               },
               multipleChoise: false,
               textLabel: "Hello",
@@ -56,7 +56,7 @@ class CheckBoxDemo extends StatelessWidget {
               checkBoxHeight: 20,
               borderColor: Colors.orange,
               onChanged: (value) {
-                debugPrint(value);
+                print(value);
               },
               multipleChoise: false,
               textLabel: "Hello",
@@ -73,7 +73,7 @@ class CheckBoxDemo extends StatelessWidget {
               checkBoxHeight: 20,
               borderColor: Colors.orange,
               onChanged: (value) {
-                debugPrint(value);
+                print(value);
               },
               multipleChoise: false,
               checkboxList: ["1" , "2" , "3", "4"], //setup a list of strings to generate a list of labeled checkboxes
@@ -87,7 +87,7 @@ class CheckBoxDemo extends StatelessWidget {
               checkBoxHeight: 20,
               borderColor: Colors.orange,
               onChanged: (value) {
-                debugPrint(value);
+                print(value);
               },
               multipleChoise: true,
               clickableLabel: true, //for clicking the whole container
@@ -102,7 +102,7 @@ class CheckBoxDemo extends StatelessWidget {
               checkBoxHeight: 20,
               borderColor: Colors.green,
               onChanged: (value) {
-                debugPrint(value);
+                print(value);
               },
               shape: BoxShape.circle,
               checkBoxSplashRadius: 15,
