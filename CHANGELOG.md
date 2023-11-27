@@ -1,3 +1,3 @@
-## 0.0.4
+## 0.0.5
 
-* warning fix
+* debugPrint method changed to print in example readme file
