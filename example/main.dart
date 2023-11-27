@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Splash Tap Demo',
+      title: 'Custom checkbox Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
