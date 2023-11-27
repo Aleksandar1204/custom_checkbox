@@ -1,5 +1,5 @@
 
-import 'package:checkbox_list/custom_checkbox.dart';
+import 'package:checkbox_list/checkbox_list.dart';
 import 'package:flutter/material.dart';
 
 
