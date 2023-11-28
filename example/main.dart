@@ -1,7 +1,5 @@
-
 import 'package:checkbox_list/checkbox_list.dart';
 import 'package:flutter/material.dart';
-
 
 void main() => runApp(const MyApp());
 
@@ -39,9 +37,9 @@ class CheckBoxDemo extends StatelessWidget {
               },
               multipleChoise: false,
               textLabel: "Hello",
-              labelTextStyle:const TextStyle(color: Colors.black, fontSize: 16),
+              labelTextStyle:
+                  const TextStyle(color: Colors.black, fontSize: 16),
               paddingBetweenTitleAndCheckBox: 13,
-
             ),
             //labeled single checkbox
             CustomCheckBox(
@@ -53,11 +51,11 @@ class CheckBoxDemo extends StatelessWidget {
               },
               multipleChoise: false,
               textLabel: "Hello",
-              labelTextStyle:const TextStyle(color: Colors.black, fontSize: 16),
+              labelTextStyle:
+                  const TextStyle(color: Colors.black, fontSize: 16),
               paddingBetweenTitleAndCheckBox: 13,
               checkBoxSplashColor: Colors.blue,
               checkBoxSplashRadius: 20,
-
             ),
 
             //single choice
@@ -69,10 +67,15 @@ class CheckBoxDemo extends StatelessWidget {
                 print(value);
               },
               multipleChoise: false,
-              checkboxList: ["1" , "2" , "3", "4"], //setup a list of strings to generate a list of labeled checkboxes
-              labelTextStyle:const TextStyle(color: Colors.black, fontSize: 16),
+              checkboxList: [
+                "1",
+                "2",
+                "3",
+                "4"
+              ], //setup a list of strings to generate a list of labeled checkboxes
+              labelTextStyle:
+                  const TextStyle(color: Colors.black, fontSize: 16),
               paddingBetweenTitleAndCheckBox: 13,
-
             ),
             //multiple choice
             CustomCheckBox(
@@ -84,10 +87,15 @@ class CheckBoxDemo extends StatelessWidget {
               },
               multipleChoise: true,
               clickableLabel: true, //for clicking the whole container
-              checkboxList: ["1" , "2" , "3", "4"], //setup a list of strings to generate a list of labeled checkboxes
-              labelTextStyle:const TextStyle(color: Colors.black, fontSize: 16),
+              checkboxList: [
+                "1",
+                "2",
+                "3",
+                "4"
+              ], //setup a list of strings to generate a list of labeled checkboxes
+              labelTextStyle:
+                  const TextStyle(color: Colors.black, fontSize: 16),
               paddingBetweenTitleAndCheckBox: 13,
-
             ),
             //single choice
             CustomCheckBox(
@@ -101,8 +109,14 @@ class CheckBoxDemo extends StatelessWidget {
               checkBoxSplashRadius: 15,
               checkBoxSplashColor: Colors.yellow,
               multipleChoise: false,
-              checkboxList: ["1" , "2" , "3", "4"], //setup a list of strings to generate a list of labeled checkboxes
-              labelTextStyle:const TextStyle(color: Colors.black, fontSize: 16),
+              checkboxList: [
+                "1",
+                "2",
+                "3",
+                "4"
+              ], //setup a list of strings to generate a list of labeled checkboxes
+              labelTextStyle:
+                  const TextStyle(color: Colors.black, fontSize: 16),
               paddingBetweenTitleAndCheckBox: 13,
               selectedBoxColor: Colors.red,
             ),
@@ -111,4 +125,4 @@ class CheckBoxDemo extends StatelessWidget {
       ),
     );
   }
-}  
+}
