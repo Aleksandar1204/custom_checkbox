@@ -1,3 +1,3 @@
-## 0.0.5
+## 0.0.6
 
-* debugPrint method changed to print in example readme file
+* Dart formater
