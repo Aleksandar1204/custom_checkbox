@@ -10,7 +10,7 @@ class CustomCheckBox extends StatefulWidget {
   final Widget? widgetUnderTheLabel;
   final double checkBoxWidth;
   final double checkBoxHeight;
-  final bool multipleChoise;
+  final bool multipleChoice;
   final Function(dynamic) onChanged;
   final Icon? checkBoxIcon;
   final double iconSize;
@@ -34,7 +34,7 @@ class CustomCheckBox extends StatefulWidget {
       this.checkBoxWidth = 15,
       this.checkBoxHeight = 15,
       required this.onChanged,
-      required this.multipleChoise,
+      required this.multipleChoice,
       this.checkBoxIcon,
       this.iconSize = 1.4,
       this.checkBoxSplashRadius = 10,
@@ -256,7 +256,7 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
         selected = list[index]["value"];
         list[index]["bool"] = !list[index]["bool"];
 
-        if (!widget.multipleChoise) {
+        if (!widget.multipleChoice) {
           for (var i = 0; i < list.length; i++) {
             if (list[i]['bool'] == true && selected != list[i]['value']) {
               list[i]['bool'] = false;

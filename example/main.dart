@@ -27,7 +27,7 @@ class CheckBoxDemo extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            //labeled single checkbox
+            //labeled single choice checkbox
             CustomCheckBox(
               checkBoxWidth: 20,
               checkBoxHeight: 20,
@@ -35,13 +35,29 @@ class CheckBoxDemo extends StatelessWidget {
               onChanged: (value) {
                 print(value);
               },
-              multipleChoise: false,
-              textLabel: "Hello",
+              multipleChoice: false,
+              textLabel: "Value 1",
               labelTextStyle:
                   const TextStyle(color: Colors.black, fontSize: 16),
               paddingBetweenTitleAndCheckBox: 13,
             ),
-            //labeled single checkbox
+            //labeled single choice checkbox
+            CustomCheckBox(
+              checkBoxWidth: 20,
+              checkBoxHeight: 20,
+              borderColor: Colors.blue,
+              onChanged: (value) {
+                print(value);
+              },
+              clickableLabelSplashColor: Colors.blue, //In order to use this property, set clickable label to true
+              clickableLabel: true,
+              multipleChoice: false,
+              textLabel: "Value 2",
+              labelTextStyle:
+              const TextStyle(color: Colors.black, fontSize: 16),
+              paddingBetweenTitleAndCheckBox: 13,
+            ),
+            //labeled single choice checkbox
             CustomCheckBox(
               checkBoxWidth: 20,
               checkBoxHeight: 20,
@@ -49,8 +65,8 @@ class CheckBoxDemo extends StatelessWidget {
               onChanged: (value) {
                 print(value);
               },
-              multipleChoise: false,
-              textLabel: "Hello",
+              multipleChoice: false,
+              textLabel: "Value 3",
               labelTextStyle:
                   const TextStyle(color: Colors.black, fontSize: 16),
               paddingBetweenTitleAndCheckBox: 13,
@@ -58,7 +74,7 @@ class CheckBoxDemo extends StatelessWidget {
               checkBoxSplashRadius: 20,
             ),
 
-            //single choice
+            //single choice with check box list
             CustomCheckBox(
               checkBoxWidth: 20,
               checkBoxHeight: 20,
@@ -66,7 +82,7 @@ class CheckBoxDemo extends StatelessWidget {
               onChanged: (value) {
                 print(value);
               },
-              multipleChoise: false,
+              multipleChoice: false,
               checkboxList: [
                 "1",
                 "2",
@@ -77,7 +93,7 @@ class CheckBoxDemo extends StatelessWidget {
                   const TextStyle(color: Colors.black, fontSize: 16),
               paddingBetweenTitleAndCheckBox: 13,
             ),
-            //multiple choice
+            //multiple choice with check box list
             CustomCheckBox(
               checkBoxWidth: 20,
               checkBoxHeight: 20,
@@ -85,7 +101,7 @@ class CheckBoxDemo extends StatelessWidget {
               onChanged: (value) {
                 print(value);
               },
-              multipleChoise: true,
+              multipleChoice: true,
               clickableLabel: true, //for clicking the whole container
               checkboxList: [
                 "1",
@@ -97,7 +113,7 @@ class CheckBoxDemo extends StatelessWidget {
                   const TextStyle(color: Colors.black, fontSize: 16),
               paddingBetweenTitleAndCheckBox: 13,
             ),
-            //single choice
+            //single choice with check box list
             CustomCheckBox(
               checkBoxWidth: 20,
               checkBoxHeight: 20,
@@ -108,7 +124,7 @@ class CheckBoxDemo extends StatelessWidget {
               shape: BoxShape.circle,
               checkBoxSplashRadius: 15,
               checkBoxSplashColor: Colors.yellow,
-              multipleChoise: false,
+              multipleChoice: false,
               checkboxList: [
                 "1",
                 "2",

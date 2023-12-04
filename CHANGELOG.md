@@ -1,3 +1,3 @@
 ## 0.0.11
 
-*  Dart file conventions
+*  Typo fix for multipleChoice property, new examples added in readme file && upgrading dependencies
