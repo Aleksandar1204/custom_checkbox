@@ -1,3 +1,3 @@
-## 0.0.12
+## 0.0.13
 
-*  Typo fix for multipleChoice property, new examples added in readme file && upgrading dependencies
+*  Upgrading the latest dart dependencies
