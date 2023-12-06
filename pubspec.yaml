@@ -1,6 +1,6 @@
 name: checkbox_list
 description: "This package contains one widget and can be used as a custom checkbox, the widget contains multiple properties and multiple functionalities."
-version: 0.0.13
+version: 0.0.14
 homepage: https://github.com/Aleksandar1204/custom_checkbox
 
 environment:
