@@ -1,3 +1,3 @@
-## 0.0.14
+## 0.0.15
 
-*  Exporting the flutter path
+*  Upgrading the latest flutter dependencies
