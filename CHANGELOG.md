@@ -1,3 +1,3 @@
-## 0.0.15
+## 0.0.16
 
-*  Upgrading the latest flutter dependencies
+*  Upgrading the latest flutter version 3.16.3
