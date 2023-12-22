@@ -22,29 +22,33 @@ class CustomCheckBox extends StatefulWidget {
   final String? textLabel;
   final BorderRadius? borderRadius;
   final BoxShape shape;
-  CustomCheckBox(
-      {super.key,
-      this.checkboxList,
-      this.borderColor = Colors.black,
-      this.labelTextStyle,
-      this.checkIconColor = Colors.black,
-      this.selectedBoxColor = Colors.transparent,
-      this.paddingBetweenTitleAndCheckBox = 0,
-      this.widgetUnderTheLabel,
-      this.checkBoxWidth = 15,
-      this.checkBoxHeight = 15,
-      required this.onChanged,
-      required this.multipleChoice,
-      this.checkBoxIcon,
-      this.iconSize = 1.4,
-      this.checkBoxSplashRadius = 10,
-      this.clickableLabel = false,
-      this.borderWidth = 2.0,
-      this.checkBoxSplashColor,
-      this.clickableLabelSplashColor,
-      this.textLabel,
-      this.borderRadius,
-      this.shape = BoxShape.rectangle});
+  final EdgeInsets margin;
+
+  CustomCheckBox({
+    super.key,
+    this.checkboxList,
+    this.borderColor = Colors.black,
+    this.labelTextStyle,
+    this.checkIconColor = Colors.black,
+    this.selectedBoxColor = Colors.transparent,
+    this.paddingBetweenTitleAndCheckBox = 0,
+    this.widgetUnderTheLabel,
+    this.checkBoxWidth = 15,
+    this.checkBoxHeight = 15,
+    required this.onChanged,
+    required this.multipleChoice,
+    this.checkBoxIcon,
+    this.iconSize = 1.4,
+    this.checkBoxSplashRadius = 10,
+    this.clickableLabel = false,
+    this.borderWidth = 2.0,
+    this.checkBoxSplashColor,
+    this.clickableLabelSplashColor,
+    this.textLabel,
+    this.borderRadius,
+    this.shape = BoxShape.rectangle,
+    this.margin = EdgeInsets.zero,
+  });
 
   @override
   State<CustomCheckBox> createState() => _CustomCheckBoxState();
@@ -55,6 +59,7 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
   List<Map<String, dynamic>> list = [];
   List<String> selectedList = [];
   bool isChecked = false;
+
   @override
   void initState() {
     super.initState();
@@ -69,8 +74,8 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
   Widget build(BuildContext context) {
     return widget.checkboxList == null && widget.textLabel == null
         ? InkResponse(
-            radius: widget
-                .checkBoxSplashRadius, //in order to use this property set the clickableLabel property to false
+            radius: widget.checkBoxSplashRadius,
+            //in order to use this property set the clickableLabel property to false
             splashColor: widget.checkBoxSplashColor,
             onTap: !widget.clickableLabel
                 ? () {
@@ -109,8 +114,8 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
           )
         : widget.checkboxList == null && widget.textLabel != null
             ? InkWell(
-                splashColor: widget
-                    .clickableLabelSplashColor, //in order to use this property set the clickableLabel property to true
+                splashColor: widget.clickableLabelSplashColor,
+                //in order to use this property set the clickableLabel property to true
                 onTap: widget.clickableLabel
                     ? () {
                         onTap(0);
@@ -119,8 +124,8 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
                 child: Row(
                   children: [
                     InkResponse(
-                      radius: widget
-                          .checkBoxSplashRadius, //in order to use this property set the clickableLabel property to false
+                      radius: widget.checkBoxSplashRadius,
+                      //in order to use this property set the clickableLabel property to false
                       splashColor: widget.checkBoxSplashColor,
                       onTap: !widget.clickableLabel
                           ? () {
@@ -176,75 +181,80 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
             : Column(
                 children: List.generate(
                     list.length,
-                    (index) => InkWell(
-                          splashColor: widget
-                              .clickableLabelSplashColor, //in order to use this property set the clickableLabel property to true
-                          onTap: widget.clickableLabel
-                              ? () {
-                                  onTap(index);
-                                }
-                              : null,
-                          splashFactory:
-                              InkSparkle.constantTurbulenceSeedSplashFactory,
-                          child: Row(
-                            children: [
-                              InkResponse(
-                                radius: widget
-                                    .checkBoxSplashRadius, //in order to use this property set the clickableLabel property to false
-                                splashColor: widget.checkBoxSplashColor,
-                                onTap: !widget.clickableLabel
-                                    ? () {
-                                        onTap(index);
-                                      }
-                                    : null,
-                                child: Container(
-                                  width: widget.checkBoxWidth,
-                                  height: widget.checkBoxHeight,
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                      color: list[index]["bool"] == true
-                                          ? widget.selectedBoxColor
-                                          : null,
-                                      border: Border.all(
-                                        color: widget.borderColor,
-                                        width: widget.borderWidth,
-                                      ),
-                                      borderRadius: widget.borderRadius,
-                                      shape: widget.borderRadius == null
-                                          ? widget.shape
-                                          : BoxShape.rectangle),
-                                  child: list[index]["bool"] == true
-                                      ? FittedBox(
-                                          child: Transform.scale(
-                                            scale: widget.iconSize,
-                                            child: widget.checkBoxIcon ??
-                                                Icon(
-                                                  Icons.check,
-                                                  color: widget.checkIconColor,
-                                                ),
-                                          ),
-                                        )
+                    (index) => Padding(
+                          padding: widget.margin,
+                          child: InkWell(
+                            splashColor: widget.clickableLabelSplashColor,
+                            //in order to use this property set the clickableLabel property to true
+                            onTap: widget.clickableLabel
+                                ? () {
+                                    onTap(index);
+                                  }
+                                : null,
+                            splashFactory:
+                                InkSparkle.constantTurbulenceSeedSplashFactory,
+                            child: Row(
+                              children: [
+                                InkResponse(
+                                  radius: widget.checkBoxSplashRadius,
+                                  //in order to use this property set the clickableLabel property to false
+                                  splashColor: widget.checkBoxSplashColor,
+                                  onTap: !widget.clickableLabel
+                                      ? () {
+                                          onTap(index);
+                                        }
                                       : null,
+                                  child: Container(
+                                    width: widget.checkBoxWidth,
+                                    height: widget.checkBoxHeight,
+                                    alignment: Alignment.center,
+                                    decoration: BoxDecoration(
+                                        color: list[index]["bool"] == true
+                                            ? widget.selectedBoxColor
+                                            : null,
+                                        border: Border.all(
+                                          color: widget.borderColor,
+                                          width: widget.borderWidth,
+                                        ),
+                                        borderRadius: widget.borderRadius,
+                                        shape: widget.borderRadius == null
+                                            ? widget.shape
+                                            : BoxShape.rectangle),
+                                    child: list[index]["bool"] == true
+                                        ? FittedBox(
+                                            child: Transform.scale(
+                                              scale: widget.iconSize,
+                                              child: widget.checkBoxIcon ??
+                                                  Icon(
+                                                    Icons.check,
+                                                    color:
+                                                        widget.checkIconColor,
+                                                  ),
+                                            ),
+                                          )
+                                        : null,
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(
-                                    left:
-                                        widget.paddingBetweenTitleAndCheckBox),
-                                child: Wrap(
-                                    direction: Axis.vertical,
-                                    spacing: widget.widgetUnderTheLabel == null
-                                        ? 0
-                                        : -5,
-                                    children: [
-                                      Text(list[index]["value"],
-                                          style: widget.labelTextStyle ??
-                                              const TextStyle()),
-                                      widget.widgetUnderTheLabel ??
-                                          const SizedBox()
-                                    ]),
-                              ),
-                            ],
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      left: widget
+                                          .paddingBetweenTitleAndCheckBox),
+                                  child: Wrap(
+                                      direction: Axis.vertical,
+                                      spacing:
+                                          widget.widgetUnderTheLabel == null
+                                              ? 0
+                                              : -5,
+                                      children: [
+                                        Text(list[index]["value"],
+                                            style: widget.labelTextStyle ??
+                                                const TextStyle()),
+                                        widget.widgetUnderTheLabel ??
+                                            const SizedBox()
+                                      ]),
+                                ),
+                              ],
+                            ),
                           ),
                         )),
               );

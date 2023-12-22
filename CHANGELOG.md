@@ -1,3 +1,3 @@
-## 0.0.16
+## 0.0.17
 
-*  Upgrading the latest flutter version 3.16.3
+*  New property for margin between the checkbox list children
